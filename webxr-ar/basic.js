@@ -10,7 +10,7 @@ window.onload = () => {
                   south = e.detail.position.latitude - 0.05;
                   north = e.detail.position.latitude + 0.05;
             console.log(`${west} ${south} ${east} ${north}`);
-            const response = await fetch(`https://hikar.org/webapp/map?bbox=${west},${south},${east},${north}&layers=poi&outProj=4326`);
+            const response = await fetch(`https://hikar.org/webapp/map?bbox=-7.916207,40.657588,-7.905908,40.661519&layers=poi&outProj=4326`);
             const pois = await response.json();
             pois.features.forEach ( feature => {
                 const compoundEntity = document.createElement("a-entity");
@@ -24,7 +24,7 @@ window.onload = () => {
                     y: 20,
                     z: 20
                 });
-                box.setAttribute('material', { color: 'red' } );
+                box.setAttribute('material', { color: 'green' } );
                 box.setAttribute("position", {
                     x : 0,
                     y : 20,
